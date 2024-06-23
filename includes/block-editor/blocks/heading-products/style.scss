@@ -1,0 +1,103 @@
+.heading-products-block-grid {
+	text-align: center;
+}
+
+.heading-products-block-grid__no-products {
+	padding: 48px;
+	text-align: center;
+	width: 100%;
+}
+
+.heading-products-block-grid__products {
+	background-clip: padding-box;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -8px 16px;
+	padding: 0;
+}
+
+.heading-products-block-grid__product {
+	border-bottom: 16px solid transparent;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	box-sizing: border-box;
+	float: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	text-align: center;
+	width: auto;
+}
+
+.heading-products-block-grid__product.heading-products-block-grid__product {
+	box-sizing: border-box;
+}
+
+.heading-products-block-grid.has-3-columns .heading-products-block-grid__product {
+	flex: 1 0 33.3333333333%;
+	max-width: 33.3333333333%;
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+
+	.heading-products-block-grid.has-3-columns .heading-products-block-grid__product {
+		flex: 1 0 50%;
+		margin: 0 0 24px;
+		max-width: 50%;
+		padding: 0;
+	}
+
+	.heading-products-block-grid.has-3-columns .heading-products-block-grid__product:nth-child(odd) {
+		padding-right: 8px;
+	}
+
+	.heading-products-block-grid.has-3-columns .heading-products-block-grid__product:nth-child(2n) {
+		padding-left: 8px;
+	}
+}
+
+@media (max-width: 480px) {
+
+	.heading-products-block-grid.has-3-columns .heading-products-block-grid__products {
+		display: block;
+	}
+
+	.heading-products-block-grid.has-3-columns .heading-products-block-grid__product {
+		flex: 1 0 100%;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 100%;
+		padding: 0;
+	}
+}
+
+.heading-products-block-grid__products .heading-products-block-grid__product-image img {
+	height: auto;
+	max-width: 100%;
+	width: auto;
+}
+
+.heading-products-block-grid__products .heading-products-block-grid__product-image {
+	display: block;
+	position: relative;
+	text-decoration: none;
+}
+
+.heading-products-block-grid__products .heading-products-block-grid__product-image a {
+	border: 0;
+	box-shadow: none;
+	outline: 0;
+	text-decoration: none;
+}
+
+.heading-products-block-grid__products .heading-products-block-grid__product-image img.woocommerce-placeholder {
+	height: auto;
+	max-width: 100%;
+	width: auto;
+	border: 1px solid #f2f2f2;
+}
+
+.heading-products-block-grid__products .heading-products-block-grid__product-image img[hidden] {
+	display: none;
+}

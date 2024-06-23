@@ -1,0 +1,42 @@
+{
+	"apiVersion": 3,
+	"name": "challenge/heading-products",
+	"version": "0.1.0",
+	"title": "Heading & Products",
+	"category": "theme",
+	"description": "",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "heading-products",
+	"editorScript": "file:../../../../build/heading-products.js",
+	"editorStyle": "file:../../../../build/heading-products.css",
+	"style": "file:../../../../build/style-heading-products.css",
+	"attributes": {
+        "heading": {
+            "type": "string",
+            "default": "Products"
+        },
+		"headingTagLevel": {
+			"type": "number",
+			"default": 2
+		},
+		"textAlign": {
+			"type": "string",
+			"default": ""
+		},
+		"blockIdentifier": {
+			"type": "string",
+			"default": ""
+		},
+		"orderby": {
+			"type": "string",
+			"default": "date"
+		},
+		"order": {
+			"enum": [ "ASC", "DESC" ],
+			"default": "DESC"
+		}
+    },
+	"render": "file:./heading-products.php"
+}

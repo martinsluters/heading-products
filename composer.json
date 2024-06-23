@@ -1,0 +1,83 @@
+{
+	"name": "martinsluters/challenge",
+	"description": "",
+	"type": "wordpress-plugins",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Martins Luters",
+			"email": "luters.martins@gmail.com"
+		}
+	],
+	"minimum-stability": "stable",
+	 "autoload": {
+        "psr-4": {
+            "martinsluters\\Challenge\\": "src/"
+        }
+     },
+	"config": {
+		"archive-format": "zip",
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"platform": {
+            "php": "7.4"
+        }
+	},
+	"require-dev": {
+		"yoast/phpunit-polyfills": "^2.0",
+		"wp-coding-standards/wpcs": "^3.0",
+		"phpcompatibility/phpcompatibility-wp": "*"
+	},
+	"require": {
+		"php": ">=7.4",
+		"twig/twig": "^3.10"
+	},
+	"extra": {
+        "mozart": {
+            "dep_namespace": "martinsluters\\Challenge\\Dependencies\\",
+            "dep_directory": "/src/Dependencies/",
+            "classmap_directory": "/dependencies/classes/",
+            "classmap_prefix": "Challenge_",
+            "delete_vendor_directories": true
+        }
+    },
+	"scripts": {
+        "post-install-cmd": [
+			"docker pull coenjacobs/mozart",
+            "docker run --rm -it -v \"${PWD}\":/project/ coenjacobs/mozart /mozart/bin/mozart compose",
+			"composer dump-autoload"
+        ],
+        "post-update-cmd": [
+            "docker pull coenjacobs/mozart",
+            "docker run --rm -it -v \"${PWD}\":/project/ coenjacobs/mozart /mozart/bin/mozart compose",
+            "composer dump-autoload"
+        ]
+    },
+	"archive": {
+        "exclude": [
+			"node_modules/",
+			"tests/",
+			".gitattributes",
+			".gitignore",
+			".editorconfig",
+			".phpcs.xml.dist",
+			"phpunit.xml.dist",
+			"composer.json",
+			"composer.lock",
+			"*.zip",
+			"README.txt",
+			"README.md",
+			"package-lock.json",
+			"package.json",
+			".wp-env.json",
+			"webpack.config.js",
+			".nvmrc",
+			".eslintrc",
+			".eslintignore",
+			"includes/block-editor/blocks/**/*.js",
+			"includes/block-editor/blocks/**/*.scss",
+			"bin/"
+        ]
+    }
+}

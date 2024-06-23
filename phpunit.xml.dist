@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<phpunit
+	bootstrap="tests/phpunit/bootstrap.php"
+	backupGlobals="false"
+	colors="true"
+	cacheResult="false"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	>
+	<testsuites>
+		<testsuite name="Heading Products Integration Tests">
+			<directory prefix="Test" suffix=".php">./tests/phpunit/integration/</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>

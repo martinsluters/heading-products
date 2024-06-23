@@ -1,0 +1,17 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-challenges-heading-products {
+
+	&__edit-view {
+		border: 1px dashed #ddd;
+		padding: 20px;
+	}
+
+	&__edit-control-button {
+		margin: 1em auto 0;
+	}
+}

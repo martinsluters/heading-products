@@ -1,0 +1,13 @@
+{% for product in products %}
+	<li class="heading-products-block-grid__product">
+		<a href="{{ product.get_permalink() }}" class="heading-products-block-grid__product-link">
+			<div class="heading-products-block-grid__product-image">
+				{{ product.get_image() | raw }}
+			</div>
+			<div class="heading-products-block-grid__product-title">{{ product.get_title() }}</div>
+		</a>
+		<div class="heading-products-block-grid__product-price price">
+			{{ product.get_price_html() | raw }}
+		</div>
+	</li>
+{% endfor %}

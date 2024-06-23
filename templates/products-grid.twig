@@ -1,0 +1,13 @@
+<div data-block-name="challenge/heading-products" class="heading-products-block-grid heading-products-block-heading-products has-3-columns">
+	{{ beforeLoopAction }}
+
+	{% if products|length > 0 %}
+		<ul class="heading-products-block-grid__products">
+			{{ include('products-grid-item.twig') }}
+		</ul>
+	{% else %}
+		<div clas="heading-products-block-grid__no-products">{{ noProductsFoundText }}</div>
+	{% endif %}
+
+	{{ afterLoopAction }}
+</div>
